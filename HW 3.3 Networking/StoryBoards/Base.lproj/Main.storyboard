@@ -23,23 +23,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="T5C-SJ-a2k">
-                                            <rect key="frame" x="16" y="0.0" width="361" height="129"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emoji" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-um-qi2">
+                                            <rect key="frame" x="16" y="0.0" width="70" height="129"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="OSY-RH-9wx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-RM-8rc">
+                                            <rect key="frame" x="116" y="0.0" width="261" height="129"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-um-qi2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-Iw-M2l">
-                                                    <rect key="frame" x="0.0" y="54.333333333333336" width="87.333333333333329" height="20.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="57"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD5-dN-AKK">
-                                                    <rect key="frame" x="0.0" y="108.66666666666667" width="70.333333333333329" height="20.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="72" width="70.333333333333329" height="57"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -48,10 +51,13 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="T5C-SJ-a2k" firstAttribute="leading" secondItem="hn1-Ft-qYB" secondAttribute="leading" constant="16" id="EVE-oj-16v"/>
-                                        <constraint firstAttribute="bottom" secondItem="T5C-SJ-a2k" secondAttribute="bottom" id="Jqq-t8-Pvf"/>
-                                        <constraint firstItem="T5C-SJ-a2k" firstAttribute="top" secondItem="hn1-Ft-qYB" secondAttribute="top" id="R76-0F-EC9"/>
-                                        <constraint firstAttribute="trailing" secondItem="T5C-SJ-a2k" secondAttribute="trailing" constant="16" id="jgH-RP-emJ"/>
+                                        <constraint firstItem="WHw-um-qi2" firstAttribute="top" secondItem="hn1-Ft-qYB" secondAttribute="top" id="3SL-y1-ogQ"/>
+                                        <constraint firstItem="WHw-um-qi2" firstAttribute="leading" secondItem="hn1-Ft-qYB" secondAttribute="leading" constant="16" id="EVp-nB-TwX"/>
+                                        <constraint firstAttribute="trailing" secondItem="fKb-RM-8rc" secondAttribute="trailing" constant="16" id="WWe-cL-XsW"/>
+                                        <constraint firstItem="fKb-RM-8rc" firstAttribute="top" secondItem="hn1-Ft-qYB" secondAttribute="top" id="XdI-5u-9pt"/>
+                                        <constraint firstAttribute="bottom" secondItem="WHw-um-qi2" secondAttribute="bottom" id="fUs-4w-Z6j"/>
+                                        <constraint firstAttribute="bottom" secondItem="fKb-RM-8rc" secondAttribute="bottom" id="j8d-aI-sNK"/>
+                                        <constraint firstItem="fKb-RM-8rc" firstAttribute="leading" secondItem="WHw-um-qi2" secondAttribute="trailing" constant="30" id="yhG-C5-ODK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

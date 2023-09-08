@@ -13,11 +13,11 @@ final class MainViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 70
 
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         emojis.count
     }
@@ -29,8 +29,7 @@ final class MainViewController: UITableViewController {
         cell.emojiLabel.text = emoji.emoji
         cell.descriptionLabel.text = emoji.description
         cell.categoryLabel.text = emoji.category
-
-
+        
         return cell
     }
    

@@ -32,8 +32,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-RM-8rc">
-                                            <rect key="frame" x="116" y="0.0" width="261" height="129"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-RM-8rc">
+                                            <rect key="frame" x="116" y="5" width="261" height="119"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-Iw-M2l">
                                                     <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="57"/>
@@ -42,7 +42,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD5-dN-AKK">
-                                                    <rect key="frame" x="0.0" y="72" width="70.333333333333329" height="57"/>
+                                                    <rect key="frame" x="0.0" y="62" width="70.333333333333329" height="57"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -54,9 +54,9 @@
                                         <constraint firstItem="WHw-um-qi2" firstAttribute="top" secondItem="hn1-Ft-qYB" secondAttribute="top" id="3SL-y1-ogQ"/>
                                         <constraint firstItem="WHw-um-qi2" firstAttribute="leading" secondItem="hn1-Ft-qYB" secondAttribute="leading" constant="16" id="EVp-nB-TwX"/>
                                         <constraint firstAttribute="trailing" secondItem="fKb-RM-8rc" secondAttribute="trailing" constant="16" id="WWe-cL-XsW"/>
-                                        <constraint firstItem="fKb-RM-8rc" firstAttribute="top" secondItem="hn1-Ft-qYB" secondAttribute="top" id="XdI-5u-9pt"/>
+                                        <constraint firstItem="fKb-RM-8rc" firstAttribute="top" secondItem="hn1-Ft-qYB" secondAttribute="top" constant="5" id="XdI-5u-9pt"/>
                                         <constraint firstAttribute="bottom" secondItem="WHw-um-qi2" secondAttribute="bottom" id="fUs-4w-Z6j"/>
-                                        <constraint firstAttribute="bottom" secondItem="fKb-RM-8rc" secondAttribute="bottom" id="j8d-aI-sNK"/>
+                                        <constraint firstAttribute="bottom" secondItem="fKb-RM-8rc" secondAttribute="bottom" constant="5" id="j8d-aI-sNK"/>
                                         <constraint firstItem="fKb-RM-8rc" firstAttribute="leading" secondItem="WHw-um-qi2" secondAttribute="trailing" constant="30" id="yhG-C5-ODK"/>
                                     </constraints>
                                 </tableViewCellContentView>

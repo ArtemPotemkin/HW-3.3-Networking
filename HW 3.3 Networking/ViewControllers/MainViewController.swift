@@ -39,7 +39,7 @@ final class MainViewController: UITableViewController {
 // MARK: - Networking
 extension MainViewController {
     func fetchEmojis() {
-        NetworkManager.shared.fetch([Emoji].self, from: Link.jsonUrl.rawValue) { result in
+        NetworkManager.shared.fetch([Emoji].self, from: Link.jsonUrl.rawValue) { [unowned self] result in
             switch result {
             case .success(let emojis):
                 self.emojis = emojis

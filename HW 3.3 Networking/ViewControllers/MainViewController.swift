@@ -9,11 +9,12 @@ import UIKit
 
 final class MainViewController: UITableViewController {
     
-    let emojisMok = EmojiMok.getEmoji()
-    var emojis: [Emoji] = []
+    private var emojis: [Emoji] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Emojis"
         tableView.rowHeight = 70
         fetchEmojis()
 
@@ -30,7 +31,7 @@ final class MainViewController: UITableViewController {
         let emoji = emojis[indexPath.row]
         cell.emojiLabel.text = emoji.emoji
         cell.descriptionLabel.text = emoji.description
-        cell.categoryLabel.text = emoji.category
+        cell.categoryLabel.text = "Category: \(emoji.category)"
         
         return cell
     }

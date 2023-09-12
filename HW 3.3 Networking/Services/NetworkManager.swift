@@ -22,7 +22,7 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchEmoji(from url: String, completion: @escaping(Result<[Emoji], NetworkError>) -> Void) {
+    func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
             return
@@ -35,9 +35,9 @@ final class NetworkManager {
             }
             
             do {
-                let emoji = try JSONDecoder().decode([Emoji].self, from: data)
+                let type = try JSONDecoder().decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(emoji))
+                    completion(.success(type))
                 }
             } catch let error {
                 print(error.localizedDescription)

@@ -29,9 +29,7 @@ final class MainViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emojiCell", for: indexPath)
         guard let cell = cell as? EmojiCell else { return UITableViewCell() }
         let emoji = emojis[indexPath.row]
-        cell.emojiLabel.text = emoji.emoji
-        cell.descriptionLabel.text = emoji.description
-        cell.categoryLabel.text = "Category: \(emoji.category)"
+        cell.configure(with: emoji)
         
         return cell
     }
@@ -41,23 +39,14 @@ final class MainViewController: UITableViewController {
 // MARK: - Networking
 extension MainViewController {
     func fetchEmojis() {
-        guard let url = URL(string: "https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json") else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+        NetworkManager.shared.fetchEmoji(from: Link.jsonUrl.rawValue) { [unowned self] result in
+            switch result {
+            case .success(let emojis):
+                self.emojis = emojis
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
-            
-            do {
-                let decoder = JSONDecoder()
-                self?.emojis = try decoder.decode([Emoji].self, from: data)
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        }
     }
 }

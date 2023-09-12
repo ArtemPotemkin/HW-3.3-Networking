@@ -13,4 +13,9 @@ final class EmojiCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
     
+    func configure(with emoji: Emoji) {
+        emojiLabel.text = emoji.emoji
+        descriptionLabel.text = emoji.description
+        categoryLabel.text = "Category: \(emoji.category)"
+    }
 }

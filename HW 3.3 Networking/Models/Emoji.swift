@@ -9,4 +9,5 @@ struct Emoji: Decodable {
     let emoji: String
     let description: String
     let category: String
+    let iosVersion: String
 }

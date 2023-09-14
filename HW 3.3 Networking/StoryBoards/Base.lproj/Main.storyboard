@@ -16,15 +16,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emojiCell" rowHeight="129" id="YAH-Q5-YaC" customClass="EmojiCell" customModule="HW_3_3_Networking" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="129"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emojiCell" rowHeight="190" id="YAH-Q5-YaC" customClass="EmojiCell" customModule="HW_3_3_Networking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="190"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YAH-Q5-YaC" id="hn1-Ft-qYB">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="190"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emoji" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-um-qi2">
-                                            <rect key="frame" x="16" y="0.0" width="70" height="129"/>
+                                            <rect key="frame" x="16" y="0.0" width="70" height="190"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="OSY-RH-9wx"/>
                                             </constraints>
@@ -33,17 +33,23 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-RM-8rc">
-                                            <rect key="frame" x="116" y="5" width="277" height="119"/>
+                                            <rect key="frame" x="116" y="5" width="277" height="180"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-Iw-M2l">
-                                                    <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="53.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="51.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD5-dN-AKK">
-                                                    <rect key="frame" x="0.0" y="58.666666666666657" width="64" height="60.333333333333343"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <rect key="frame" x="0.0" y="56.333333333333343" width="59.333333333333336" height="48.666666666666657"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ios version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3p-MX-N2i">
+                                                    <rect key="frame" x="0.0" y="110" width="73.333333333333329" height="70"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -64,6 +70,7 @@
                                     <outlet property="categoryLabel" destination="fD5-dN-AKK" id="N5O-e4-VLj"/>
                                     <outlet property="descriptionLabel" destination="g7f-Iw-M2l" id="ko7-mf-vut"/>
                                     <outlet property="emojiLabel" destination="WHw-um-qi2" id="UnY-9S-QAh"/>
+                                    <outlet property="iosVersionLabel" destination="y3p-MX-N2i" id="Cqp-KO-KYm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

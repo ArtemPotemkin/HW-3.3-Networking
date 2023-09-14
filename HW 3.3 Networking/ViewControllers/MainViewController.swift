@@ -15,7 +15,7 @@ final class MainViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Emojis"
-        tableView.rowHeight = 70
+        tableView.rowHeight = 100
         fetchEmojis()
 
     }
@@ -32,6 +32,11 @@ final class MainViewController: UITableViewController {
         cell.configure(with: emoji)
         
         return cell
+    }
+    
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

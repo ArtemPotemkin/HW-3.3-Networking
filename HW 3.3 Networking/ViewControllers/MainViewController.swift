@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 final class MainViewController: UITableViewController {
     
@@ -19,6 +18,7 @@ final class MainViewController: UITableViewController {
         tableView.rowHeight = 100
 //        fetchEmojis()
         fetchAF()
+        
         
 
     }
@@ -59,18 +59,15 @@ extension MainViewController {
     }
     
     private func fetchAF () {
-        AF.request(Link.jsonUrl.rawValue)
-            .validate()
-            .responseJSON { [unowned self] dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    emojis = Emoji.getEmojis(from: value)
-                    tableView.reloadData()
-                    
-                case .failure(let error):
-                    print(error)
-                }
+        NetworkManager.shared.fetchEmojis(from: Link.jsonUrl.rawValue) { [unowned self] result in
+            switch result {
+            case .success(let emojis):
+                self.emojis = emojis
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
+        }
     }
     
     

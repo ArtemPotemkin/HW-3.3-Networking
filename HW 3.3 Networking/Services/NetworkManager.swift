@@ -23,6 +23,21 @@ final class NetworkManager {
     
     private init() {}
     
+    func fetchEmojis(from url: String, completion: @escaping(Result<[Emoji], AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let emojis = Emoji.getEmojis(from: value)
+                    completion(.success(emojis))
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
     func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))

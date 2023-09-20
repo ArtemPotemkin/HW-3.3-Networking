@@ -17,7 +17,7 @@ final class MainViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Emojis"
         tableView.rowHeight = 100
-        fetchEmojis()
+//        fetchEmojis()
         fetchAF()
         
 
@@ -61,10 +61,12 @@ extension MainViewController {
     private func fetchAF () {
         AF.request(Link.jsonUrl.rawValue)
             .validate()
-            .responseJSON { dataResponse in
+            .responseJSON { [unowned self] dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    print(value)
+                    emojis = Emoji.getEmojis(from: value)
+                    tableView.reloadData()
+                    
                 case .failure(let error):
                     print(error)
                 }

@@ -10,4 +10,24 @@ struct Emoji: Decodable {
     let description: String
     let category: String
     let iosVersion: String
+    
+    // TODO: try delete this
+    init(emoji: String, description: String, category: String, iosVersion: String) {
+        self.emoji = emoji
+        self.description = description
+        self.category = category
+        self.iosVersion = iosVersion
+    }
+    
+    init(emojiData: [String: Any]) {
+        emoji = emojiData["emoji"] as? String ?? ""
+        description = emojiData["description"] as? String ?? ""
+        category = emojiData["category"] as? String ?? ""
+        iosVersion = emojiData["ios_version"] as? String ?? ""
+    }
+    
+    static func getEmojis(from value: Any) -> [Emoji] {
+        guard let emojisData = value as? [[String: Any]] else { return [] }
+        return emojisData.map { Emoji(emojiData: $0) }
+    }
 }

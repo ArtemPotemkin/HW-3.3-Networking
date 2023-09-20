@@ -38,6 +38,7 @@ final class NetworkManager {
             }
     }
     
+    // TODO: delete this method
     func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))

@@ -46,6 +46,8 @@ final class MainViewController: UITableViewController {
 
 // MARK: - Networking
 extension MainViewController {
+    
+    // TODO: delete this unused method
     private func fetchEmojis() {
         NetworkManager.shared.fetch([Emoji].self, from: Link.jsonUrl.rawValue) { [unowned self] result in
             switch result {

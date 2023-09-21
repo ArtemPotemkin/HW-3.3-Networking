@@ -16,11 +16,7 @@ final class MainViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Emojis"
         tableView.rowHeight = 100
-//        fetchEmojis()
         fetchAF()
-        
-        
-
     }
 
     // MARK: - Table view data source
@@ -47,19 +43,6 @@ final class MainViewController: UITableViewController {
 // MARK: - Networking
 extension MainViewController {
     
-    // TODO: delete this unused method
-    private func fetchEmojis() {
-        NetworkManager.shared.fetch([Emoji].self, from: Link.jsonUrl.rawValue) { [unowned self] result in
-            switch result {
-            case .success(let emojis):
-                self.emojis = emojis
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     private func fetchAF () {
         NetworkManager.shared.fetchEmojis(from: Link.jsonUrl.rawValue) { [unowned self] result in
             switch result {
@@ -71,6 +54,4 @@ extension MainViewController {
             }
         }
     }
-    
-    
 }

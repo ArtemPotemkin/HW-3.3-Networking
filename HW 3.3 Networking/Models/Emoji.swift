@@ -11,14 +11,6 @@ struct Emoji: Decodable {
     let category: String
     let iosVersion: String
     
-    // TODO: try delete this
-    init(emoji: String, description: String, category: String, iosVersion: String) {
-        self.emoji = emoji
-        self.description = description
-        self.category = category
-        self.iosVersion = iosVersion
-    }
-    
     init(emojiData: [String: Any]) {
         emoji = emojiData["emoji"] as? String ?? ""
         description = emojiData["description"] as? String ?? ""
